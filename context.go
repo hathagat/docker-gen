@@ -185,7 +185,7 @@ func GetCurrentContainerID() string {
 }
 
 func matchDockerCurrentContainerID(lines string) string {
-	regex := "/var/lib/docker/containers[/-]([[:alnum:]]{64})/"
+	regex := "/lib/docker/containers[/-]([[:alnum:]]{64})/"
 	re := regexp.MustCompilePOSIX(regex)
 
 	if re.MatchString(lines) {
